@@ -9,8 +9,10 @@ document.getElementById("btn-login")
             
                  //step-2 : get the phone number
               const phoneNumber = document.getElementById('phone-number').value
-              console.log(phoneNumber);
-              
+              const pinNumber = document.getElementById('pin').value
+              console.log(phoneNumber, pinNumber);
+               window.location.href = '/home.html';
+            
                 
  })
 
