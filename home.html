@@ -8,7 +8,14 @@
 </head>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
-
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <style>
+        .handwriting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            font:bold;
+        }
+    </style>
 <body>
  <main class="flex justify-center">
 
@@ -20,7 +27,7 @@
      <div class="stats shadow">
       <div class="stat">
        <div id="account-balance" class="stat-value">400</div>
-       <div class="stat-desc">Available balance</div>
+       <div class=" stat-desc">Available balance</div>
       </div>
      </div>
 
@@ -31,14 +38,14 @@
      </div>
      <!-- button  -->
      <div>
-      <button class="btn btn-lg">Add money</button>
-      <button class="btn btn-lg">Cash Out</button>
+      <button id="btn-show-add-money" class="btn btn-lg">Add money</button>
+      <button id="btn-show-cash-out" class="btn btn-lg" >Cash Out</button>
       
       <div class="divider"></div>
      
       
        <!--add money form start -->
-       <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+       <div id="add-money-form" class="handwriting  card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form class="card-body">
           <div class="form-control">
             <label class="label">
@@ -59,7 +66,38 @@
         </form>
       </div>
        <!-- add money form end  -->
-        
+        <!-- cashout start  -->
+        <h2 class="hidden handwriting">Cash Out</h2>
+        <div id="cash-out-form" class="hidden handwriting card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+          <form class="card-body">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Agent Number</span>
+              </label>
+              <input id="agent-number" type="number" placeholder="Enter 11 digits number" class="input input-bordered" required />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Ammount</span>
+              </label>
+              <input id="add-cash-out" type="number"
+               placeholder="Enter amount to withdraw" class="input input-bordered" required />
+            </div>
+
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Enter 4 digit pin</span>
+              </label>
+              <input id="cash-out-pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered" required />
+            
+            </div>
+            <div class="form-control mt-6">
+              <button id="btn-cash-out" class="btn btn-primary">Withdraw money</button>
+            </div>
+          </form>
+        </div>
+         <!-- cashout end  -->
        
      </div>
     </div>
@@ -67,6 +105,7 @@
   </div>
  </main>
  <script src="js/home.js"></script>
+ <script src="js/addmoney.js"></script>
 </body>
 
 </html>
