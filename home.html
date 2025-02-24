@@ -9,13 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-    <style>
-        .handwriting {
-            font-family: 'Dancing Script', cursive;
-            font-size: 24px;
-            font:bold;
-        }
-    </style>
+  <link rel="stylesheet" href="style.css">
 <body>
  <main class="flex justify-center">
 
@@ -32,43 +26,53 @@
      </div>
 
      <!-- divider  -->
-     <div class="flex w-full flex-col border-opacity-50">
+     <div class=" flex w-full flex-col border-opacity-50">
       <div class="divider"></div>
 
      </div>
-     <!-- button  -->
-     <div>
-      <button id="btn-show-add-money" class="btn btn-lg">Add money</button>
-      <button id="btn-show-cash-out" class="btn btn-lg" >Cash Out</button>
+     <!-- Features start  -->
+     <div class="handwriting flex-row">
+      <button id="btn-show-add-money" class="btn btn-md">Add money</button>
+      <button id="btn-show-cash-out" class="btn btn-md" >Cash Out</button>
+      <button id="btn-show-transection" class="btn btn-md" >Transection</button>
+
+    </div>
+   
+    
+      <!-- Features end -->
       
       <div class="divider"></div>
      
       
        <!--add money form start -->
-       <div id="add-money-form" class="handwriting  card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-        <form class="card-body">
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Add to ammount</span>
-            </label>
-            <input id="add-ammount" type="number" placeholder="Add to ammount" class="input input-bordered" required />
-          </div>
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text">Enter 4 digit pin</span>
-            </label>
-            <input id="pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered" required />
-          
-          </div>
-          <div class="form-control mt-6">
-            <button id="btn-add-money" class="btn btn-primary">Add Money</button>
-          </div>
-        </form>
+      <div id="add-money-section" class="handwriting">
+        <h2 class="text-2xl">Add Ammount</h2>
+        <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+          <form class="card-body">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Add to ammount</span>
+              </label>
+              <input id="add-ammount" type="number" autocomplete="off" placeholder="Add to ammount" class="input input-bordered" required />
+            </div>
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Enter 4 digit pin</span>
+              </label>
+              <input id="pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered" required />
+            
+            </div>
+            <div class="form-control mt-6">
+              <button id="btn-add-money" class="btn btn-primary">Add Money</button>
+            </div>
+          </form>
+        </div>
       </div>
        <!-- add money form end  -->
         <!-- cashout start  -->
-        <h2 class="hidden handwriting">Cash Out</h2>
-        <div id="cash-out-form" class="hidden handwriting card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+        <div id="cash-out-section" class=" handwriting hidden">
+        <h2 class="text-2xl">Cash Out</h2>
+        <div id="cash-out-form" class=" handwriting card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
           <form class="card-body">
             <div class="form-control">
               <label class="label">
@@ -97,15 +101,26 @@
             </div>
           </form>
         </div>
+       </div>
          <!-- cashout end  -->
        
-     </div>
+         <!-- Transection start -->
+         <div id="transection-section" class="handwriting hidden">
+          <h2 class="text-2xl">Transection Money</h2>
+           <div id="transection-container" class="text-sm">
+                
+           </div>
+         </div>
+          <!-- Transection End  -->
+   
     </div>
    </div>
   </div>
  </main>
- <script src="js/home.js"></script>
+ <script src="js/utilities.js"></script>
  <script src="js/addmoney.js"></script>
+ <script src="js/cashout.js"></script>
+ <script src="js/features.js"></script>
 </body>
 
 </html>
