@@ -2,125 +2,262 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Payoo Home Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo Home Page</title>
 </head>
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="style.css">
+
 <body>
- <main class="flex justify-center">
+  <main class="flex justify-center">
 
-  <div class="mockup-phone border-primary">
-   <div class="camera"></div>
-   <div class="display">
-    <div class="artboard artboard-demo phone-3">
-     <!-- available balance  -->
-     <div class="stats shadow">
-      <div class="stat">
-       <div id="account-balance" class="stat-value">400</div>
-       <div class=" stat-desc">Available balance</div>
-      </div>
-     </div>
-
-     <!-- divider  -->
-     <div class=" flex w-full flex-col border-opacity-50">
-      <div class="divider"></div>
-
-     </div>
-     <!-- Features start  -->
-     <div class="handwriting flex-row">
-      <button id="btn-show-add-money" class="btn btn-md">Add money</button>
-      <button id="btn-show-cash-out" class="btn btn-md" >Cash Out</button>
-      <button id="btn-show-transection" class="btn btn-md" >Transection</button>
-
-    </div>
-   
-    
-      <!-- Features end -->
-      
-      <div class="divider"></div>
-     
-      
-       <!--add money form start -->
-      <div id="add-money-section" class="handwriting">
-        <h2 class="text-2xl">Add Ammount</h2>
-        <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <form class="card-body">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Add to ammount</span>
-              </label>
-              <input id="add-ammount" type="number" autocomplete="off" placeholder="Add to ammount" class="input input-bordered" required />
-            </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Enter 4 digit pin</span>
-              </label>
-              <input id="pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered" required />
-            
-            </div>
-            <div class="form-control mt-6">
-              <button id="btn-add-money" class="btn btn-primary">Add Money</button>
-            </div>
-          </form>
-        </div>
-      </div>
-       <!-- add money form end  -->
-        <!-- cashout start  -->
-        <div id="cash-out-section" class=" handwriting hidden">
-        <h2 class="text-2xl">Cash Out</h2>
-        <div id="cash-out-form" class=" handwriting card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
-          <form class="card-body">
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Agent Number</span>
-              </label>
-              <input id="agent-number" type="number" placeholder="Enter 11 digits number" class="input input-bordered" required />
+    <div class="mockup-phone border-primary">
+      <!-- <div class="camera"></div> -->
+      <div class="display">
+        <div class="artboard artboard-demo phone-3">
+          <!-- available balance  -->
+          <div class="stats shadow mt-5 flex items-center justify-between px-4 py-2 rounded-lg w-fit fixed-container">
+            <!-- Left: Image, Balance, and Description -->
+            <div class="flex items-center gap-2">
+              <img src="payoo.png" alt="payoo" class="w-5 h-auto">
+              <span id="account-balance" class="text-xl font-bold">400</span>
+              <span class="text-sm text-gray-500">Available balance</span>
             </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Ammount</span>
-              </label>
-              <input id="add-cash-out" type="number"
-               placeholder="Enter amount to withdraw" class="input input-bordered" required />
-            </div>
+            <!-- Right: Logout Button -->
+            <button id="btn-log-out" class="btn btn-sm  ml-4">Log Out</button>
+          </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Enter 4 digit pin</span>
-              </label>
-              <input id="cash-out-pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered" required />
-            
+
+          <!-- divider  -->
+          <div class=" flex w-full flex-col border-opacity-50">
+            <div class="divider"></div>
+          </div>
+          <!-- welcome section -->
+          <div class="welcome mb-5 ml-3">         
+            <div class="flex text-2xl font-bold">
+              <img src="https://png.pngtree.com/png-clipart/20240903/original/pngtree-fire-transparent-clipart-vector-png-image_15927729.png" 
+              alt="Add Money" class="w-[40px] h-[40px]">
+               <span>Welcome to Payoooo!</span> </div>
+            <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
+          </div>
+
+          <!-- Features start  -->
+          <div class="grid grid-cols-3 gap-2 p-2">
+            <!-- Add Money -->
+            <button id="btn-show-add-money" class="flex flex-col items-center justify-center p-2 border
+             border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://cdn-icons-png.freepik.com/256/2953/2953423.png?semt=ais_hybrid" 
+              alt="Add Money" class="w-[30px] h-[30px]">
+              <span class="text-[10px] font-bold text-gray-700 ">Add Money</span>
+            </button>
+
+            <!-- Cashout -->
+            <button id="btn-show-cash-out" class="flex flex-col items-center justify-center 
+            p-2 border border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://static.vecteezy.com/system/resources/previews/043/987/950/non_2x/cashback-3d-icon-png.png" 
+              alt="Cashout" class="w-[30px] h-[30px]">
+              <span class="text-[10px] font-bold text-gray-700">Cashout</span>
+            </button>
+
+            <!-- Transfer Money -->
+            <button id="btn-transfer-money" class="flex flex-col items-center justify-center p-2 border
+             border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://www.pngall.com/wp-content/uploads/15/Gold-Coins-PNG-Photo.png" 
+              alt="Transfer Money" class="w-[30px] h-[30px]">
+              <span class="text-[10px] font-bold text-gray-700">Transfer Money</span>
+            </button>
+
+            <!-- Get Bonus -->
+            <button id="btn-show-get-bouns" class="flex flex-col items-center justify-center p-2 border
+             border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://png.pngtree.com/png-clipart/20230822/original/pngtree-dollar-icon-design-vector-picture-image_8167422.png"
+               alt="Get Bonus" class="w-[40px] h-[40px]">
+              <span class="text-[10px] font-bold text-gray-700">Get Bonus</span>
+            </button>
+
+            <!-- Pay Bill (Selected Button) -->
+            <button id="btn-show-pay-bill" class="flex flex-col items-center justify-center p-2 border
+            border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://cdn-icons-png.flaticon.com/512/8117/8117580.png"
+              alt="PayBill" class="w-[30px] h-[30px]">
+              <span class="text-[10px] font-bold  text-gray-700">Pay Bill</span>
+            </button>
+
+            <!-- Transactions -->
+            <button id="btn-show-transection" class="flex flex-col items-center justify-center p-2 border
+             border-gray-300 rounded-lg w-[100px] h-[60px] hover:border-blue-500 focus:border-blue-500">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOggumaOk280jd1rjenH7DZ7DjWOXFXxPtFw&s" 
+              alt="Transactions" class="w-[30px] h-[30px]">
+              <span class="text-[10px] font-bold text-gray-700">Transactions</span>
+            </button>
+          </div>
+
+          <!-- Features end -->
+
+          <div class="divider"></div>
+          <!--add money form start -->
+          <div id="add-money-section" class=".form-container mt-0">
+            <h2 class="font-bold mb-2">Add Ammount</h2>
+            <div id="add-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Add to ammount</span>
+                  </label>
+                  <input id="add-ammount" type="text" autocomplete="off" placeholder="Add to ammount"
+                    class="input input-bordered" required />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Enter 4 digit pin</span>
+                  </label>
+                  <input id="pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered"
+                    required />
+
+                </div>
+                <div class="form-control mt-3">
+                  <button id="btn-add-money" class="btn btn-primary">Add Money</button>
+                </div>
+              </form>
             </div>
-            <div class="form-control mt-6">
-              <button id="btn-cash-out" class="btn btn-primary">Withdraw money</button>
+          </div>
+          <!-- add money form end  -->
+          <!-- cashout start  -->
+          <div id="cash-out-section" class="form-container hidden">
+            <h2 class="font-bold mb-2">Cash Out</h2>
+            <div id="cash-out-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Ammount</span>
+                  </label>
+                  <input id="add-cash-out" type="text" placeholder="Enter amount to withdraw"
+                    class="input input-bordered" required />
+                </div>
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Enter 4 digit pin</span>
+                  </label>
+                  <input id="cash-out-pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered"
+                    required />
+
+                </div>
+                <div class="form-control mt-3">
+                  <button id="btn-cash-out" class="btn btn-primary">Withdraw money</button>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-       </div>
-         <!-- cashout end  -->
-       
-         <!-- Transection start -->
-         <div id="transection-section" class="handwriting hidden">
-          <h2 class="text-2xl">Transection Money</h2>
-           <div id="transection-container" class="text-sm">
-                
-           </div>
-         </div>
+          </div>
+          <!-- cashout end  -->
+          <!-- Transfer Money start -->
+          <div id="transfer-money-section" class="form-container hidden">
+            <h2 class="font-bold mb-2">Transfer Money</h2>
+            <div id="transfer-money-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+              <form class="card-body">
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Ammount</span>
+                  </label>
+                  <input id="transfer-money-amount" 
+                    type="text" placeholder="Enter amount to transfer"
+                    class="input input-bordered" required />
+                </div>
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin Number</span>
+                  </label>
+                  <input id="transfer-pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered"
+                    required />
+
+                </div>
+                <div class="form-control mt-3">
+                  <button id="btn-send-money" class="btn btn-primary">Send Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Transfer Money End  -->
+
+          <!-- Get Bonous Start -->
+          <div id="bonus-section" class="form-container hidden">
+            <h2 class="font-bold mb-2">Get Bonus</h2>
+            <div id="transfer-money-form" class=" card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+              <form class="card-body">
+
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Enter Bonus Copun</span>
+                  </label>
+                  <input id="copun-pin" type="password" placeholder="Enter Your Copun" class="input input-bordered"
+                    required />
+
+                </div>
+                <div class="form-control mt-3">
+                  <button id="btn-get-bouns" class="btn btn-primary">Get Bonuss</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Get Bonus End  -->
+          <!-- Pay Bil  Start-->
+          <div id="bill-section" class="form-container hidden">
+            <h2 class="font-bold mb-3"> Pay Bill</h2>
+            <div id="bill-form" class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl ">
+              <form class="card-body">
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text ">Ammount to Pay Bill</span>
+                  </label>
+                  <input id="bill-amount" type="text" placeholder="Enter amount to transfer"
+                    class="input input-bordered" required />
+                </div>
+
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin Number</span>
+                  </label>
+                  <input id="pay-bill-pin" type="password" placeholder="Enter 4 digit pin" class="input input-bordered"
+                    required />
+
+                </div>
+                <div class="form-control mt-3">
+                  <button id="btn-pay-bill" class="btn btn-primary">Pay Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- Pay bill end  -->
+          <!-- Transection start -->
+          <div id="transection-section" class="handwriting hidden">
+            <h2 class="font-bold mb-3">Transection Money</h2>
+            <div id="transection-container" class="text-sm space-y-3">
+
+            </div>
+          </div>
           <!-- Transection End  -->
-   
+
+        </div>
+      </div>
     </div>
-   </div>
-  </div>
- </main>
- <script src="js/utilities.js"></script>
- <script src="js/addmoney.js"></script>
- <script src="js/cashout.js"></script>
- <script src="js/features.js"></script>
+  </main>
+  <script src="js/utilities.js"></script>
+  <script src="js/paybills.js"></script>
+  <script src="js/addmoney.js"></script>
+  <script src="js/cashout.js"></script>
+  <script src="js/features.js"></script>
+  <script src="js/transferMoney.js"></script>
+  <script src="js/bonus.js"></script>
+
 </body>
 
 </html>

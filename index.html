@@ -8,18 +8,27 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
+
 </head>
 <body>
+  
    <main class="flex justify-center">
     <div class="mockup-phone">
      <div class="camera"></div>
      <div class="display">
-       <div class="artboard artboard-demo phone-1">
+      
         <!-- login form  -->
         <div class="hero bg-base-200 min-h-screen">
-         <div class="hero-content flex-col lg:flex-row-reverse">
+          <!-- payoo picture  -->
+          <div class="artboard artboard-demo phone-1">
+            <div class="justify-center">
+              <img src="https://usagif.com/wp-content/uploads/gify/cash-a-bag-of-money-transparent-background-usagif.gif"
+               alt="Payoo Logo" class="w-30 h-30" />
+          </div>
 
-           <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+
+         <div class="hero-content flex-col lg:flex-row-reverse">
+           <div class="card bg-base-100 w-full max-w-sm shrink-0">
              <form class="card-body" action="event">
                <div class="form-control">
                  <label class="label">
@@ -34,7 +43,7 @@
                  <input id="pin" type="password" placeholder="Enter your pin" class="input input-bordered" required />
                 
                </div>
-               <div class="form-control mt-6">
+               <div class="form-control mt-3">
                  <button id="btn-login" 
                  class="btn btn-primary">Login</button>
                </div>

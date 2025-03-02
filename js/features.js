@@ -11,7 +11,24 @@ document.getElementById('btn-show-add-money')
    
  })
 
- document.getElementById('btn-show-transection').addEventListener('click', function(){
+ document.getElementById('btn-transfer-money').addEventListener('click', function(){
+  showSectionById('transfer-money-section')
+})
+
+ 
+
+document.getElementById('btn-show-get-bouns').addEventListener('click', function(){
+  showSectionById('bonus-section')
+  
+})
+
+document.getElementById('btn-show-pay-bill').addEventListener('click', function(){
+  console.log('bil-section');
+    showSectionById('bill-section')
+})
+
+
+document.getElementById('btn-show-transection').addEventListener('click', function(){
   console.log('transection');
   showSectionById('transection-section')
   

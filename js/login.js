@@ -10,8 +10,14 @@ document.getElementById("btn-login")
                  //step-2 : get the phone number
               const phoneNumber = document.getElementById('phone-number').value
               const pinNumber = document.getElementById('pin').value
-              console.log(phoneNumber, pinNumber);
-               window.location.href = '/home.html';
+              const pin = parseFloat(pinNumber)
+              if(pin === 1234){
+                window.location.href = '/home.html';
+              }else{
+                alert('Login Failed !! try again.')
+              }
+              
+               
             
                 
  })

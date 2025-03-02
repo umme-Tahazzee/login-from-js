@@ -3,7 +3,6 @@
 function getInputFieldValueById(id){
    const inputValue = document.getElementById(id).value;
    const inputNumber = parseFloat(inputValue);
-   
    return inputNumber;
 }
 
@@ -19,7 +18,11 @@ function getTextFieldValueById(id){
 function showSectionById(id){
      document.getElementById('add-money-section').classList.add('hidden')
      document.getElementById('cash-out-section').classList.add('hidden')
+     document.getElementById('transfer-money-section').classList.add('hidden')
+     document.getElementById('bonus-section').classList.add('hidden')
+     document.getElementById('bill-section').classList.add('hidden')
      document.getElementById('transection-section').classList.add('hidden')
+
      // show the section with the provided id as parameter
      document.getElementById(id).classList.remove('hidden')
 }
